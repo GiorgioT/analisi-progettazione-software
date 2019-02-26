@@ -30,5 +30,10 @@ namespace ConsoleExercises
             }
             while (c != 'q');
         }
+
+        static void Test()
+        {
+
+        }
     }
 }

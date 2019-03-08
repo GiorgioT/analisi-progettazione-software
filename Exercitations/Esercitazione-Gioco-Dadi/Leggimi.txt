@@ -1,0 +1,1 @@
+Inserire i diagrammi dell'esercizio sui dadi in questa cartella, specificando il numero del gruppo nel nome del file.

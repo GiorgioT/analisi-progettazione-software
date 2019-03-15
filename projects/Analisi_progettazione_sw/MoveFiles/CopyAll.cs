@@ -5,32 +5,36 @@ using System.Text;
 
 namespace MoveFiles
 {
-    public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
+    public class CopyAll
     {
-    if (source.FullName.ToLower() == target.FullName.ToLower())
-    {
-    return;
-}
+        public static void MoveFiles(DirectoryInfo source, DirectoryInfo target)
+        {
+            Console.WriteLine("Hello World!");
+            string sourceDirectory = @"D:\VSProjects\upload";
+            string CVdestinationDirectory = @"D:\TEMPORANEA_APPOGGIO\Tex\uploads\Curricula\";
+            string CERTdestinationDirectory = @"D:\TEMPORANEA_APPOGGIO\Tex\uploads\Certificazioni\";
+            var destination = string.Empty;
+            DirectoryInfo diSource = new DirectoryInfo(sourceDirectory);
+            foreach (DirectoryInfo diSourceSubDir in diSource.GetDirectories())
+            {
+                Console.WriteLine(diSourceSubDir.Name);
+                foreach (var filedentrolacartella in diSourceSubDir.GetFiles())
+                {
+                    Console.WriteLine(filedentrolacartella.Name);
+                    if (filedentrolacartella.Name.StartsWith("CV"))
+                    {
+                        Console.WriteLine("Questo è un curriculum");
+                        destination = CVdestinationDirectory + filedentrolacartella.Name;
+                    }
+                    else if (filedentrolacartella.Name.StartsWith("CERT"))
+                    {
+                        Console.WriteLine("Questa è una certificazione");
+                        destination = CERTdestinationDirectory + filedentrolacartella.Name;
+                    }
+                    filedentrolacartella.MoveTo(destination);
 
-// Check if the target directory exists, if not, create it.
-if (Directory.Exists(target.FullName) == false)
-{
-Directory.CreateDirectory(target.FullName);
-}
-
-// Copy each file into it's new directory.
-foreach (FileInfo fi in source.GetFiles())
-{
-Console.WriteLine(@"Copying {0}\{1}", target.FullName, fi.Name);
-fi.CopyTo(Path.Combine(target.ToString(), fi.Name), true);
-}
-
-// Copy each subdirectory using recursion.
-foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
-{
-DirectoryInfo nextTargetSubDir =
-    target.CreateSubdirectory(diSourceSubDir.Name);
-CopyAll(diSourceSubDir, nextTargetSubDir);
-}
-}
+                }
+            }
+        }
+    }
 }

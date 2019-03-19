@@ -7,13 +7,12 @@ namespace MoveFiles
     {
         static void Main(string[] args)
         {
-            
             for (int i = 0; i < 3; i++)
             {
                 Console.WriteLine("Inserisci la tua password qui:");
                 string inputOne = Console.ReadLine();
+                Bancomat.getCredentials(inputOne);
                 var checkpsw = Bancomat.checkPassword(inputOne);
-
                 if (!checkpsw)
                 {
                     Console.WriteLine("La password non è corretta.");
@@ -26,7 +25,6 @@ namespace MoveFiles
                 }
  
             }
-
             Console.WriteLine("Scegli il tipo di operazione:");
             Console.WriteLine("1 - Per prelevare;");
             Console.WriteLine("2 - Per depositare;");
@@ -47,6 +45,10 @@ namespace MoveFiles
                         Console.WriteLine("Inserisci un altro importo.");
                         amount = Convert.ToInt32(Console.ReadLine());
                         checkA = Bancomat.checkMoney(amount);
+                    }
+                    if (checkA)
+                    {
+                        Bancomat.updateBalance(amount);
                     }
                     break;
                 case (int)Bancomat_enums.operationType.Deposito:

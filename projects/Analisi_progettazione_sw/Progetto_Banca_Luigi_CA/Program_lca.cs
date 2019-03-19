@@ -57,7 +57,7 @@ namespace Progetto_Banca_Luigi_CA
                     break;
             }
 
-            var checkmny = Bancomat_lca.CheckAmount(amount);
+            
         }
 
     }

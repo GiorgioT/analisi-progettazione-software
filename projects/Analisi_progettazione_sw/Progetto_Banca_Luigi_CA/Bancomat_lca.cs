@@ -12,6 +12,10 @@ namespace Progetto_Banca_Luigi_CA
         static string sourceDirectory = @"C:\Users\aghed\Documents\IERFOP\GitHub\Analisi_progettazione-software\projects\Analisi_progettazione_sw\Progetto_Banca_Luigi_CA\Resources";
 
         static string fileName = "credenziali.csv";
+        static string path = Path.Combine(sourceDirectory, fileName);
+
+
+        //metodi
 
         public static bool CheckPassword(string password)
         {
@@ -22,10 +26,10 @@ namespace Progetto_Banca_Luigi_CA
                 if (password == _password)
                 {
                     res = true;
-                }  
+                }
             }
-            return res; 
-        
+            return res;
+
         }
         static bool CheckPasswordLength(string password)
         {
@@ -41,35 +45,63 @@ namespace Progetto_Banca_Luigi_CA
         {
             bool res = false;
 
-            if (_amount>=amount)
+            if (_amount >= amount)
             {
                 res = true;
             }
- 
+
             return res;
         }
-
-        public static void GetCredentials()
+        public static void GetCredentials(string password)
         {
             DirectoryInfo diSource = new DirectoryInfo(sourceDirectory);
             if (diSource.Exists)
-            {
-                var path = Path.Combine(sourceDirectory,fileName);
+            {   
                 FileInfo fileInfo = new FileInfo(path);
                 if (fileInfo.Exists)
                 {
-                    
+
                     foreach (var line in File.ReadLines(path))
                     {
                         var lineField = line.Split(";");
-                        _password = lineField[1];
-                        _amount = Convert.ToDecimal(lineField[4]);
 
-                            
+
+                        if (lineField[1] == password)
+                        {
+                            _password = lineField[1];
+                            _amount = Convert.ToDecimal(lineField[4]);
+
+                        }
+
                     }
                 }
             }
 
+        }
+        public static void UpdateBalance(decimal withdrawal)
+        {
+            _amount -= withdrawal;
+            var lines = File.ReadAllLines(path);
+            var newLines = new List<string>(); 
+    
+            foreach (var line in lines)
+            {
+                var lineField = line.Split(";");
+
+
+                if (lineField[1] == _password)
+                {
+
+                    //_amount = Convert.ToDecimal(lineField[4]);
+                    lineField[4] = _amount.ToString();
+
+
+                }
+                var line1 = string.Join(";", lineField, 0, 5);
+                newLines.Add(line1);
+            }
+            File.WriteAllLines(path, newLines.ToArray());
+            
         }
 
     }

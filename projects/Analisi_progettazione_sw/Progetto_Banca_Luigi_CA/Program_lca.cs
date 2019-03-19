@@ -7,12 +7,15 @@ namespace Progetto_Banca_Luigi_CA
     {
         static void Main(string[] args)
         {
-            Bancomat_lca.GetCredentials();
+            
             for (int i = 0; i < 3; i++)
             {
                 Console.WriteLine("Inserisci la tua password qui:");
-                string inputOne = Console.ReadLine();
+                var inputOne = Console.ReadLine();
+                
+                Bancomat_lca.GetCredentials(inputOne);
                 var checkpsw = Bancomat_lca.CheckPassword(inputOne);
+
                 
                 if (!checkpsw)
                     
@@ -49,6 +52,11 @@ namespace Progetto_Banca_Luigi_CA
                         Console.WriteLine("Inserisci un altro importo.");
                         amount = Convert.ToInt32(Console.ReadLine());
                         checkA = Bancomat_lca.CheckAmount(amount);
+                        
+                    }
+                    if (checkA)
+                    {
+                        Bancomat_lca.UpdateBalance(amount);
                     }
                     break;
                 case (int)Bancomat_enums_lca.operationType.Deposito:

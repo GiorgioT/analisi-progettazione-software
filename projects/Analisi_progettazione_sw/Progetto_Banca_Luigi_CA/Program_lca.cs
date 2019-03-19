@@ -7,7 +7,7 @@ namespace Progetto_Banca_Luigi_CA
     {
         static void Main(string[] args)
         {
-
+            Bancomat_lca.GetCredentials();
             for (int i = 0; i < 3; i++)
             {
                 Console.WriteLine("Inserisci la tua password qui:");

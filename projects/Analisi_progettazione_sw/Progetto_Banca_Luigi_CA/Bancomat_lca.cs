@@ -8,6 +8,7 @@ namespace Progetto_Banca_Luigi_CA
     {
         const string _password = "12345";
         const decimal _amount = 25000;
+        static string sourceDirectory = @"C:\Users\aghed\Documents\IERFOP\GitHub\Analisi_progettazione-software\projects\Analisi_progettazione_sw\Progetto_Banca_Luigi_CA\Resources";
 
         public static bool CheckPassword(string password)
         {
@@ -45,7 +46,11 @@ namespace Progetto_Banca_Luigi_CA
             return res;
         }
 
-
+        public static void GetCredentials()
+        {
+            
+            
+        }
 
     }
 }

@@ -2,31 +2,28 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Progetto_Banca_Luigi_CA
+namespace MoveFiles
 {
-    public static class Bancomat_lca
+    public static class Bancomat
     {
-        const string _password = "12345";
+        const string _password = "88661";
         const decimal _amount = 25000;
-
-        public static bool CheckPassword(string password)
+        public static bool CheckPassword (string password)
         {
             bool res = false;
-
-            if (CheckPasswordLength(password))
+            if (CheckPasswordLenght(password))
             {
-                if (password == _password)
+                if (_password == password)
                 {
                     res = true;
-                }  
+                }
             }
-            return res; 
-        
+
+            return res;
         }
-        static bool CheckPasswordLength(string password)
+        static bool CheckPasswordLenght(string password)
         {
             bool res = false;
-
             if (password.Length == 5)
             {
                 res = true;
@@ -36,16 +33,15 @@ namespace Progetto_Banca_Luigi_CA
         public static bool CheckAmount(decimal amount)
         {
             bool res = false;
-
-            if (_amount>=amount)
+            if (_amount >= amount)
             {
                 res = true;
             }
- 
             return res;
         }
-
-
-
+        public static void GetCredentials()
+        {
+           
+        }
     }
 }

@@ -7,95 +7,53 @@ namespace MoveFiles
     {
         static void Main(string[] args)
         {
-            
             for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine("Inserisci la tua password qui:");
-                string inputOne = Console.ReadLine();
-                var checkpsw = Bancomat.checkPassword(inputOne);
-
-<<<<<<< HEAD
-            for (int i = 0; i < 3; i++)
-            {
-
-                Console.WriteLine("Inserisci password");
+                Console.WriteLine("Inserisci la tua password");
                 var input = Console.ReadLine();
-                var checkpsw = Bancomat_Andrea.CheckPassword(input);
-                if (!checkpsw)
-
+                var checkP = Bancomat.CheckPassword(input);
+                if (!checkP)
                 {
                     Console.WriteLine("La tua password non è stata confermata");
                     Console.WriteLine("Riprova ad inserire la password");
                 }
                 else
                 {
-                    Console.WriteLine("Password verificata");
+                    Console.WriteLine("password verificata");
                     break;
                 }
-
             }
             Console.WriteLine("Scegli operazione");
             Console.WriteLine("Scegli 1 per deposito");
             Console.WriteLine("Scegli 2 per prelievo");
-            var operation = Console.Read();
-           
+            var operation =  Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Hai scelto di fare un " + 
+                Enum.GetName(typeof(BacomatEnums.OperationType), operation));
+            Console.WriteLine("Inserisci l'importo");
+            var amount = Convert.ToDecimal(Console.ReadLine());
 
             switch (operation)
             {
-                case (int)Bancomat_enum.operationType.Deposito:
+                case (int)BacomatEnums.OperationType.Deposito:
                     break;
-                case (int)Bancomat_enum.operationType.Prelievo:
-                default:
-                    break;
-                    
-            }
-        } 
-=======
-                if (!checkpsw)
-                {
-                    Console.WriteLine("La password non è corretta.");
-                    Console.WriteLine("Reinserire la password.");
-                }
-                else
-                {
-                    Console.WriteLine("La password è corretta.");
-                    break;
-                }
- 
-            }
-
-            Console.WriteLine("Scegli il tipo di operazione:");
-            Console.WriteLine("1 - Per prelevare;");
-            Console.WriteLine("2 - Per depositare;");
-            var inputTwo = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Hai scelto di fare un " +
-                Enum.GetName(typeof(Bancomat_enums.operationType), inputTwo));
-            Console.WriteLine("Inserisci l'importo:");
-            var amount = Convert.ToInt32(Console.ReadLine());
-
-            switch (inputTwo)
-            {
-                case (int)Bancomat_enums.operationType.Prelievo:
-                    var checkA = Bancomat.checkMoney(amount);
+                case (int)BacomatEnums.OperationType.Prelievo:
+                    var checkA = Bancomat.CheckAmount(amount);
                     while (!checkA)
                     {
-                        Console.WriteLine("Importo richiesto non disponibile.");
-                        Console.WriteLine("Inserisci un altro importo.");
-                        amount = Convert.ToInt32(Console.ReadLine());
-                        checkA = Bancomat.checkMoney(amount);
+                        Console.WriteLine("Importo richiesto non disponibile");
+                        Console.WriteLine("Inserisci l'importo");
+                        amount = Convert.ToDecimal(Console.ReadLine());
+                        checkA = Bancomat.CheckAmount(amount);
                     }
-                    break;
-                case (int)Bancomat_enums.operationType.Deposito:
                     break;
                 default:
                     break;
             }
-            var checkmny = Bancomat.checkMoney(amount);
->>>>>>> 6e757c2c4c7b2dc0e71a3d9ffe41a68833ed6c97
+
+
         }
     }
-
+}
 
 
 

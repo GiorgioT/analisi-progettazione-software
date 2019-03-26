@@ -4,12 +4,12 @@ using System.Text;
 
 namespace MoveFiles
 {
-    class Bancomat_enums
+    class BacomatEnums
     {
-        public enum operationType
+       public enum OperationType
         {
-            Prelievo = 1,
-            Deposito
+            Deposito = 1,
+            Prelievo
         }
     }
 }

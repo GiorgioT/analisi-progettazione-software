@@ -8,15 +8,23 @@ namespace Ereditarietà
     {
         protected int _maxSpeed, currentSpeed;
         private int numberOfPassengers, yearBuilt;
-        public int MaxSpeed { get; set; }
-        public string ModelName { get; set; }
-        public void accellerate(int time)
+        public int MaxSpeed
         {
-           var a = currentSpeed / time;
+            get { return _maxSpeed; }
+            set { _maxSpeed = value; }
         }
-        public void brake(int time)
+        public string ModelName { get; set; }
+        public void accellerate()
         {
-            var b = -1 * (currentSpeed / time);
+           Console.WriteLine("Vehicle acceleration");
+           if ( currentSpeed < _maxSpeed)
+            {
+                currentSpeed += + 1;
+            }
+        }
+        public void brake()
+        {
+            Console.WriteLine("Vehicle break");
         }
         public void printInfo()
         {

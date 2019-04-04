@@ -15,7 +15,7 @@ namespace Eredetarieta_Luigi_Cannas
         public int MaxSpeed {get; set;}
         public string  ModelName {get; set;}
 
-        public virtual void Accellerate(int _maxSpeed, int _currentSpeed)
+        public virtual void Accellerate()
             {
 
             if (_currentSpeed<=_maxSpeed)
@@ -25,7 +25,7 @@ namespace Eredetarieta_Luigi_Cannas
             }
             }
 
-        public void Brake(int _currentSpeed)
+        public void Brake()
         {
             if (_currentSpeed > 0)
             {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ereditarietà
+namespace Eredetarieta_Luigi_Cannas
 {
-    class StreetVehicle:  vehicle
+    class StreetVehicle:  Vehicle
     {
         protected byte wheels;
         public StreetVehicle(byte wheels)

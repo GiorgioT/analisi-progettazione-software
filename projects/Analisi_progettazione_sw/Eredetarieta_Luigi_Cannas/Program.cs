@@ -6,12 +6,14 @@ namespace Eredetarieta_Luigi_Cannas
     {
         static void Main(string[] args)
         {
-            StreetVehicle macchina = new StreetVehicle();
+            var macchina = new StreetVehicle();
 
+            macchina.CurrentSpeed = 200;
             macchina.Wheels = 4;
             macchina.ModelName="fiat";
             macchina.MaxSpeed = 150;
-            
+            macchina.PrintInfo();
+
 
         }
     }

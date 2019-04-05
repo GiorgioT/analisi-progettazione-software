@@ -4,17 +4,20 @@ using System.Text;
 
 namespace Eredetarieta_Luigi_Cannas
 {
-    class StreetVehicle:  Vehicle
+    class StreetVehicle :  Vehicle
     {
         protected int wheels;
 
 
-        public int Wheels { get { return wheels; } set { wheels = value; } }
+        public int Wheels { get; set; }
 
         public StreetVehicle()
         {
-            
+          
                 this.wheels=Wheels;
+                 MaxSpeed = 200;
+                _currentSpeed = CurrentSpeed;
+            
         }
             
     }

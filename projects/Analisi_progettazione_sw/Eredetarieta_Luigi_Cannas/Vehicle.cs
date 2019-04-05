@@ -1,25 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.IO;
+
 
 namespace Eredetarieta_Luigi_Cannas
 {
     class Vehicle
     {
-        protected int _maxSpeed;
-        protected int _currentSpeed;
-        private int numberOfPassenger;
+        protected double _maxSpeed;
+        protected double _currentSpeed;
+        private int numberOfPassengers;
         private int yearBuild;
 
-        public int MaxSpeed {get; set;}
+        public int MaxSpeed { get; set; }
+
+        public double CurrentSpeed{ get; set; }
+
+
 
         public string  ModelName {get; set;}
 
         public virtual void Accellerate()
             {
-
-            if (_currentSpeed<=_maxSpeed)
+            Console.WriteLine("Stiamo accellerando");
+            if (_currentSpeed<MaxSpeed)
             {
                 _currentSpeed += 1;
 
@@ -28,6 +32,7 @@ namespace Eredetarieta_Luigi_Cannas
 
         public void Brake()
         {
+            Console.WriteLine("Stiamo frenando");
             if (_currentSpeed > 0)
             {
                 _currentSpeed -= 1;
@@ -36,9 +41,10 @@ namespace Eredetarieta_Luigi_Cannas
 
         }
 
-        public void PrintInfo(string ModelName, int _maxSpeed, int _currentSpeed)
+        public void PrintInfo()
         {
-            Console.WriteLine($"{ModelName}: current speed :{_currentSpeed} ");
+            Console.WriteLine($"Model: {ModelName}, current speed :{CurrentSpeed} ");
+            //Console.WriteLine("Model: {0} : current speed :{1} ", ModelName, _currentSpeed);
         }
 
     }

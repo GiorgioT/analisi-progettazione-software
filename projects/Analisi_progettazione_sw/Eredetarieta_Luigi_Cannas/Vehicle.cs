@@ -13,6 +13,7 @@ namespace Eredetarieta_Luigi_Cannas
         private int yearBuild;
 
         public int MaxSpeed {get; set;}
+
         public string  ModelName {get; set;}
 
         public virtual void Accellerate()

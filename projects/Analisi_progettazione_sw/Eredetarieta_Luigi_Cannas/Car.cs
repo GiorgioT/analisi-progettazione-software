@@ -26,11 +26,13 @@ namespace Eredetarieta_Luigi_Cannas
         }
         public override void  Accellerate()
         {
-
+            
         }
 
         public Car()
         {
+            wheels = 4;
+            livelloCarburante = 100;
             
         }
     }

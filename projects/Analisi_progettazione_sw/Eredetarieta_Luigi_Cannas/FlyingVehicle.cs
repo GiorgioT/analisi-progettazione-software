@@ -9,20 +9,14 @@ namespace Eredetarieta_Luigi_Cannas
         protected short directionDegree;
         protected int altitude;
 
+        public short DirectionDegree { get; set; }
+        public short Altitude { get; set; }
+
         public FlyingVehicle()
         {
-            if (directionDegree > 0)
-            {
-                Console.WriteLine("Stiamo salendo di quota!!!");
-
-            }else if (directionDegree < 0)
-            {
-                Console.WriteLine("Stiamo perdendo quota!!!");
-            }
-            else if ((altitude != 0) && (directionDegree==0))
-            {
-                Console.WriteLine("Stiamo mantendo la stessa quota!!!");
-            }
+            this.directionDegree = DirectionDegree;
+            this.altitude = Altitude;
+            Console.WriteLine("la rotta è" + directionDegree);
         }
 
         public virtual void TakeOff()

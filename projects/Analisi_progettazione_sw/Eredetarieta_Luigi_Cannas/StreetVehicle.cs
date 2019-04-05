@@ -6,11 +6,16 @@ namespace Eredetarieta_Luigi_Cannas
 {
     class StreetVehicle:  Vehicle
     {
-        protected byte wheels;
+        protected int wheels;
 
-        public StreetVehicle(byte wheels)
+
+        public int Wheels { get { return wheels; } set { wheels = value; } }
+
+        public StreetVehicle()
         {
-            this.wheels = wheels;
+            
+                this.wheels=Wheels;
         }
+            
     }
 }

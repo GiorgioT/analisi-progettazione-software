@@ -11,7 +11,7 @@ namespace Eredetarieta_Luigi_Cannas
             macchina.Wheels = 4;
             macchina.ModelName="fiat";
             macchina.MaxSpeed = 150;
-            macchina.PrintInfo;
+            
 
         }
     }

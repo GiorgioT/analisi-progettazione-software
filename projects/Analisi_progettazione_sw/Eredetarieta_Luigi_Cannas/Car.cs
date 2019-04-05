@@ -13,7 +13,7 @@ namespace Eredetarieta_Luigi_Cannas
 
         public void Accendi()
         {
-            if (motoreAcceso && (livelloCarburante > 0))
+            if ((livelloCarburante > 0))
             {
                 motoreAcceso = true;
             }

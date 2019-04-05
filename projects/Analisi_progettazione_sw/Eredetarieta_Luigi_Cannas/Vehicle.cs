@@ -7,8 +7,8 @@ namespace Eredetarieta_Luigi_Cannas
 {
     class Vehicle
     {
-        protected int _maxSpeed=0;
-        protected int _currentSpeed=150;
+        protected int _maxSpeed;
+        protected int _currentSpeed;
         private int numberOfPassenger;
         private int yearBuild;
 

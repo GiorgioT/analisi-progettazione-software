@@ -10,7 +10,7 @@ namespace Eredetarieta_Luigi_Cannas
         protected int altitude;
 
         public short DirectionDegree { get; set; }
-        public short Altitude { get; set; }
+        public int Altitude { get; set; }
 
         public FlyingVehicle()
         {

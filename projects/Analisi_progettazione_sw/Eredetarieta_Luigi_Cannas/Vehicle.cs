@@ -12,9 +12,9 @@ namespace Eredetarieta_Luigi_Cannas
         private int numberOfPassengers;
         private int yearBuild;
 
-        public int MaxSpeed { get; set; }
+        public double MaxSpeed { get; set; }
 
-        public double CurrentSpeed{ get; set; }
+        //public double CurrentSpeed{ get; set; }
 
 
 
@@ -32,10 +32,11 @@ namespace Eredetarieta_Luigi_Cannas
 
         public void Brake()
         {
-            Console.WriteLine("Stiamo frenando");
+            
             if (_currentSpeed > 0)
             {
                 _currentSpeed -= 1;
+                Console.WriteLine("Stiamo frenando");
 
             }
 
@@ -43,7 +44,7 @@ namespace Eredetarieta_Luigi_Cannas
 
         public void PrintInfo()
         {
-            Console.WriteLine($"Model: {ModelName}, current speed :{CurrentSpeed} ");
+            Console.WriteLine($"Model: {ModelName}, current speed :{_currentSpeed} ");
             //Console.WriteLine("Model: {0} : current speed :{1} ", ModelName, _currentSpeed);
         }
 

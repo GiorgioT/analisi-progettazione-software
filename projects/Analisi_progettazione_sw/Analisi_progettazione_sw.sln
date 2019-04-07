@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoveFiles", "MoveFiles\Move
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ereditarieta2", "Ereditarieta2\Ereditarieta2.csproj", "{CBAF3B80-5DFE-440F-8C05-3461173ACDDC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eredetarieta_Luigi_Cannas", "Eredetarieta_Luigi_Cannas\Eredetarieta_Luigi_Cannas.csproj", "{53762147-9BC5-4705-ACBE-73AC0ADCD8F0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{CBAF3B80-5DFE-440F-8C05-3461173ACDDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBAF3B80-5DFE-440F-8C05-3461173ACDDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBAF3B80-5DFE-440F-8C05-3461173ACDDC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53762147-9BC5-4705-ACBE-73AC0ADCD8F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53762147-9BC5-4705-ACBE-73AC0ADCD8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53762147-9BC5-4705-ACBE-73AC0ADCD8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53762147-9BC5-4705-ACBE-73AC0ADCD8F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

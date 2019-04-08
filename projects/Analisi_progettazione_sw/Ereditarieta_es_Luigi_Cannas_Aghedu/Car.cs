@@ -15,7 +15,7 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
         public void Accendi()
         {
             Console.WriteLine("sto accendendo il motore");
-            if (livelloCarburante > 0)
+            if ((!motoreAcceso) &&(livelloCarburante > 0))
             {
                 motoreAcceso = true;
                 Console.WriteLine("Il motore è acceso");
@@ -34,7 +34,6 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
             {
                 Console.WriteLine("Il motore è gia'spento");
                 currentSpeed = 0;
-
             }
             else
             {
@@ -43,7 +42,6 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
             }
 
         }
-
 
         public Car()
         {

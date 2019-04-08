@@ -11,13 +11,31 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
         private int numberOfPassengers;
         private int yearBuild;
 
-        public double MaxSpeed { get; set; }
+      
+        public int NumberOfPassengers { get; set; }
+
+        public int YearBuild { get; set; }
+
+        public void SetNumberOfPassenger()
+        {
+            this.numberOfPassengers = NumberOfPassengers;
+        }
+
+        public void SetYearBuild()
+        {
+            this.yearBuild = YearBuild;
+        }
+
+        public void SetMaxSpeed(double maxSpeed)
+        {
+            this.maxSpeed = maxSpeed;
+        }
 
         public string ModelName { get; set; }
 
         public virtual void Accellerate()
         {
-            if (currentSpeed < MaxSpeed)
+            if (currentSpeed < maxSpeed)
             {
                 currentSpeed += 1;
                 Console.WriteLine("Accellera - velocità = " + currentSpeed);
@@ -35,7 +53,7 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
 
         public void PrintInfo()
         {
-            Console.WriteLine($"Model: {ModelName}, current speed :{currentSpeed} ");
+            Console.WriteLine($"Model: {ModelName}, numero passeggeri: {NumberOfPassengers}, Anno di fabbrica: {YearBuild}, current speed: {currentSpeed}, velocità massima: {maxSpeed} ");
         }
     }
 }

@@ -25,7 +25,6 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
                 motoreAcceso = false;
                 Console.WriteLine("Il motore non si accende, hai fatto benzina?!");
             }
-
         }
 
         public void Spegni()
@@ -38,9 +37,7 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
             else
             {
                 BrakeToStop();
-
             }
-
         }
 
         public Car()
@@ -60,22 +57,17 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
                 Console.WriteLine("sto accellerando e il livello carburante è: " + livelloCarburante + " la velocità è " + currentSpeed);
                 currentSpeed += 1;
                 livelloCarburante -= 1;
-
             }
-
         }
-
 
         public virtual void AccellerateMx()
         {
-            while ((currentSpeed < MaxSpeed) && (livelloCarburante > 0))
+            while ((currentSpeed < maxSpeed) && (livelloCarburante > 0))
             {
                 Console.WriteLine("sto accellerando e il livello carburante è: " + livelloCarburante + " la velocità è " + currentSpeed);
                 currentSpeed += 1;
                 livelloCarburante -= 1;
-
             }
-
         }
 
         public virtual void BrakeToStop()
@@ -85,11 +77,8 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
                 Console.WriteLine("sto frenando e il livello carburante è: " + livelloCarburante + " la velocità è " + currentSpeed);
                 currentSpeed -= 1;
                 livelloCarburante -= 1;
-
             }
             motoreAcceso = false;
-
-
         }
     }
 

@@ -9,7 +9,7 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
         public override void Accellerate()
         {
             Console.WriteLine("Stiamo accellerando");
-            if (currentSpeed < MaxSpeed)
+            if (currentSpeed < maxSpeed)
             {
                 currentSpeed += 5;
             }

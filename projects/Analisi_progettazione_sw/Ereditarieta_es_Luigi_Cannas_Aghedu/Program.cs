@@ -8,7 +8,7 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
         {
             var aereo = new Airplane();
             aereo.ModelName = "aquila rotta";
-            aereo.MaxSpeed = 1000;
+            aereo.SetMaxSpeed(1000);
             aereo.TakeOff();
             aereo.PrintInfo();
             Console.WriteLine("ooooo");
@@ -19,10 +19,12 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
 
 
             var macchina = new Car(1000);
+            macchina.NumberOfPassengers = 4;
+            macchina.YearBuild = 2019;
             macchina.Wheels = 4;
             macchina.ModelName = "catorcio";
             macchina.PrintInfo();
-            macchina.MaxSpeed = 230;
+            macchina.SetMaxSpeed(230);
             macchina.Accendi();
             macchina.Accellerate();
             macchina.AccellerateTo(40);

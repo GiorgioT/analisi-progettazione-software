@@ -15,28 +15,31 @@ namespace Ereditarieta_es_Luigi_Cannas_Aghedu
         public void Accendi()
         {
             Console.WriteLine("sto accendendo il motore");
-            if ((!motoreAcceso) &&(livelloCarburante > 0))
+            if (!motoreAcceso) 
             {
-                motoreAcceso = true;
-                Console.WriteLine("Il motore è acceso");
+                if(livelloCarburante > 0)
+                {
+                    motoreAcceso = true;
+                    Console.WriteLine("Il motore è acceso");
+                }else
+                {
+                    Console.WriteLine("Il motore non si accende, hai fatto benzina?!");
+                }
+                
             }
-            else
-            {
-                motoreAcceso = false;
-                Console.WriteLine("Il motore non si accende, hai fatto benzina?!");
-            }
+            
         }
 
         public void Spegni()
         {
-            if (motoreAcceso == false)
+            if ((motoreAcceso)&&(currentSpeed>0))
             {
-                Console.WriteLine("Il motore è gia'spento");
-                currentSpeed = 0;
+                BrakeToStop();
             }
             else
             {
-                BrakeToStop();
+                Console.WriteLine("Il motore è spento");
+                motoreAcceso=false;
             }
         }
 

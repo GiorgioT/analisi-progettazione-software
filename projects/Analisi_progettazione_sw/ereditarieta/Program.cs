@@ -16,7 +16,8 @@ namespace ereditarieta
             cesna.ModelName = "Cesna 10447";
             cesna.TakeOff();
             cesna.PrintInfo();
-            
+
+            var c = new Car();
 
             var veic = new Vehicle();
 

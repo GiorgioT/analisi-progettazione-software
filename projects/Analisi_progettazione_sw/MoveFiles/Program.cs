@@ -7,20 +7,31 @@ namespace MoveFiles
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
+            var input = Console.ReadLine();
+            Bancomant_Giovanni.GetCredenziali(input);
+            var checkP = Bancomant_Giovanni.CheckPassword(input);
+            for (int i = 0; i<3; i++)
+		    {
+             Console.WriteLine("inserisci la tua password");             
+                if (checkP)
+                {
+                    Console.WriteLine("Password corretta");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("La tua password non è stata confermata");
+                    Console.WriteLine("riprova ad inserire la password");                    
+                }
+            }
+=======
             for (int i = 0; i < 3; i++)
             {
-<<<<<<< HEAD
-                Console.WriteLine("Inserisci la tua password qui:");
-                string inputOne = Console.ReadLine();
-                Bancomat.getCredentials(inputOne);
-                var checkpsw = Bancomat.checkPassword(inputOne);
-                if (!checkpsw)
-=======
                 Console.WriteLine("Inserisci la tua password");
                 var input = Console.ReadLine();
                 var checkP = Bancomat.CheckPassword(input);
                 if (!checkP)
->>>>>>> de5c598f5e5872ead05699a267bd05352e8058e9
                 {
                     Console.WriteLine("La tua password non è stata confermata");
                     Console.WriteLine("Riprova ad inserire la password");
@@ -31,19 +42,6 @@ namespace MoveFiles
                     break;
                 }
             }
-<<<<<<< HEAD
-            Console.WriteLine("Scegli il tipo di operazione:");
-            Console.WriteLine("1 - Per prelevare;");
-            Console.WriteLine("2 - Per depositare;");
-            var inputTwo = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Hai scelto di fare un " +
-                Enum.GetName(typeof(Bancomat_enums.operationType), inputTwo));
-            Console.WriteLine("Inserisci l'importo:");
-            var amount = Convert.ToInt32(Console.ReadLine());
-
-            switch (inputTwo)
-=======
             Console.WriteLine("Scegli operazione");
             Console.WriteLine("Scegli 1 per deposito");
             Console.WriteLine("Scegli 2 per prelievo");
@@ -54,7 +52,6 @@ namespace MoveFiles
             var amount = Convert.ToDecimal(Console.ReadLine());
 
             switch (operation)
->>>>>>> de5c598f5e5872ead05699a267bd05352e8058e9
             {
                 case (int)BacomatEnums.OperationType.Deposito:
                     break;
@@ -67,17 +64,33 @@ namespace MoveFiles
                         amount = Convert.ToDecimal(Console.ReadLine());
                         checkA = Bancomat.CheckAmount(amount);
                     }
-                    if (checkA)
-                    {
-                        Bancomat.updateBalance(amount);
-                    }
                     break;
                 default:
                     break;
             }
 
+>>>>>>> 2be2111a4e3e84bc0a9284ecbf0bddd0d90073db
 
+            Console.WriteLine("scegli operazione");
+            Console.WriteLine("1-Deposita");
+            Console.WriteLine("2-Prelieva");
+            var operation = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Hai selezionato: "+Enum.GetName(typeof(Bancomat_enums.OperationType),operation));
+            Console.WriteLine("Inserisci l'importo");
+            var amont = Convert.ToDecimal(Console.ReadLine());
+
+            switch (operation)
+            {
+                case (int)Bancomat_enums.OperationType.Deposito:                                       
+                    break;
+                case (int)Bancomat_enums.OperationType.Prelievo:
+                    var checkA = Bancomant_Giovanni.CheckManny(amont);
+                    break;
+                default:
+                    break;
+            }
         }
+               
     }
 }
 

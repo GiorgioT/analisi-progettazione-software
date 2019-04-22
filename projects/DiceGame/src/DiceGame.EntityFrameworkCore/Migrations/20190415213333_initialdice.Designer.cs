@@ -3,14 +3,16 @@ using System;
 using DiceGame.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DiceGame.Migrations
 {
     [DbContext(typeof(DiceGameDbContext))]
-    partial class DiceGameDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190415213333_initialdice")]
+    partial class initialdice
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1055,24 +1057,6 @@ namespace DiceGame.Migrations
                     b.HasIndex("TenancyName");
 
                     b.ToTable("AbpTenants");
-                });
-
-            modelBuilder.Entity("DiceGame.Players.Player", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("CreationTime");
-
-                    b.Property<long?>("CreatorUserId");
-
-                    b.Property<DateTime?>("LastModificationTime");
-
-                    b.Property<long?>("LastModifierUserId");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("dgplayers");
                 });
 
             modelBuilder.Entity("Abp.Application.Features.EditionFeatureSetting", b =>
